@@ -68,7 +68,7 @@ export const Navbar = () => {
                 color="text.primary"
                 sx={{ ml: 1, fontWeight: 600 }}
               >
-                StudioScale
+                pathOS
               </Typography>
             </MuiLink>
           </Box>

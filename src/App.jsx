@@ -1,14 +1,14 @@
-import Box from "@mui/material/Box";
-import { ThemeProvider } from "@mui/material/styles";
+import { useEffect } from "react";
 import { Layout } from "./components/Layout";
 
-
-
 function App() {
-  return (
-      <Layout></Layout>
+  useEffect(() => {
+    fetch("http://localhost:3000/api/v1/goals")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
 
-  );
+  return <Layout></Layout>;
 }
 
 export default App;
