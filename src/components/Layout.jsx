@@ -1,11 +1,16 @@
 import { Navbar } from "./elements/Navbar";
-import { Goals } from "./pages/Goals";
+import PropTypes from "prop-types";
 
-export const Layout = () => {
+export const Layout = ({children}) => {
   return (
     <>
       <Navbar />
-      <Goals />
+      {children}
     </>
   );
 };
+
+
+Layout.PropTypes = {
+  children: PropTypes.node.isRequired
+}
