@@ -8,7 +8,9 @@ function App() {
       .then((data) => console.log(data));
   }, []);
 
-  return <Layout></Layout>;
+  return (
+  <Layout>
+  </Layout>);
 }
 
 export default App;
