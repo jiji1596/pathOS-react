@@ -6,16 +6,22 @@ import useGoalStore from "../../store/useGoalStore";
 
 
 export const Goals = () => {
-  const { goals, fetchGoals, error } = useGoalStore();
+  const { goals, fetchGoals } = useGoalStore();
 
   useEffect(() => {
     fetchGoals(); // call on mount
+    console.log(goals);
+
   }, [fetchGoals]);
 
   return (
     <Stack spacing={2} sx={{paddingTop: '100px'}}>
       { goals.length > 0 &&
-        <GoalCard />
+        goals.map((goal, key) => {
+          return (
+          < GoalCard goal={goal} key={key} />
+          )
+        })
       }
     </Stack>
   );
