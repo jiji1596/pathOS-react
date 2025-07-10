@@ -11,6 +11,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+import { Routes, Route, Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness2Icon from "@mui/icons-material/Brightness2";
@@ -18,10 +19,10 @@ import { useCustomTheme } from "../../ThemeContext";
 import logo from "../../assets/icon.svg";
 import { useState } from "react";
 
+
 const navItems = [
-  { href: "#", text: "Home" },
-  { href: "#services", text: "Services" },
-  { href: "#about-us", text: "About Us" },
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About Us" },
   { href: "#pricing", text: "Pricing" },
 ];
 
@@ -37,9 +38,9 @@ export const Navbar = () => {
     <Box sx={{ textAlign: "center" }}>
       <List>
         {navItems.map((item) => (
-          <ListItem button="true" key={item.text} component="a" href={item.href}>
-            <ListItemText primary={item.text} />
-          </ListItem>
+          <Link key={item.text} to={item.href}>
+            {item.text}
+          </Link>
         ))}
         <ListItem button="true" component="a" href="#cta">
           <ListItemText primary="Get Started" />
