@@ -4,21 +4,20 @@ import {
   Typography,
   Box,
   Button,
-  IconButton,
   Link as MuiLink,
+  IconButton,
   Drawer,
   List,
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness2Icon from "@mui/icons-material/Brightness2";
 import { useCustomTheme } from "../../ThemeContext";
 import logo from "../../assets/icon.svg";
 import { useState } from "react";
-
 
 const navItems = [
   { href: "/", text: "Home" },
@@ -36,11 +35,17 @@ export const Navbar = () => {
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
-      <List>
-        {navItems.map((item) => (
-          <Link key={item.text} to={item.href}>
+      <List sx={{ display: "flex", flexDirection: "column" }}>
+        {navItems.map((item, key) => (
+          <MuiLink
+            key={key}
+            component={RouterLink}
+            to={item.href}
+            underline="none"
+            color="text.secondary"
+          >
             {item.text}
-          </Link>
+          </MuiLink>
         ))}
         <ListItem button="true" component="a" href="#cta">
           <ListItemText primary="Get Started" />
