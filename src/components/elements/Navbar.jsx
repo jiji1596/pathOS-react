@@ -7,9 +7,7 @@ import {
   Link as MuiLink,
   IconButton,
   Drawer,
-  List,
-  ListItem,
-  ListItemText,
+  List
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -47,9 +45,6 @@ export const Navbar = () => {
             {item.text}
           </MuiLink>
         ))}
-        <ListItem button="true" component="a" href="#cta">
-          <ListItemText primary="Get Started" />
-        </ListItem>
       </List>
     </Box>
   );
