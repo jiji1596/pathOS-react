@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { About } from "./components/pages/About";
 import { Goals } from "./components/pages/Goals";
+import { GoalShow } from "./components/pages/GoalShow";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Goals />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/goals/{id}" element={<GoalShow />} />
       </Routes>
       </Layout>
     </BrowserRouter>
