@@ -16,7 +16,7 @@ export const Goals = () => {
       {goals.length > 0 &&
         goals.map((goal) => {
           return (
-            <Link key={goal.id} to={`/goals/${goal.id}`}>
+            <Link style={{textDecoration: "none"}} key={goal.id} to={`/goals/${goal.id}`}>
               <GoalCard goal={goal} underline="none" />
             </Link>
           );

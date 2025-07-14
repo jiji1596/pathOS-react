@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useGoalStore from "../../store/useGoalStore";
+import { Typography } from "@mui/material";
 
 export const GoalShow = () => {
   const { id } = useParams();
@@ -13,8 +14,8 @@ export const GoalShow = () => {
   }
 
   return (
-    <div>
-      <h1>{goal.identity_statement}</h1>
-    </div>
+    <Typography variant="h1" sx={{position: "relative", top: "200px"}}>
+      {goal.identity_statement}
+    </Typography>
   );
 };
