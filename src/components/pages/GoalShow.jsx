@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useGoalStore from "../../store/useGoalStore";
-import { ProgressRing } from "../shared/ProgressRing";
+import { ProgressRingShow } from "../shared/ProgressRingShow";
 import { useEffect } from "react";
 import { Typography, Box, Card, CardContent, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -59,7 +59,12 @@ export const GoalShow = () => {
       >
         Do Task
       </Button>
-      <Card variant="outlined" sx={{mb: 2}}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <ProgressRingShow value={75} size={240} thickness={3} />
+      </Box>
+      <Card variant="outlined" sx={{ mb: 2 }}>
         <CardContent>
           <Typography
             gutterBottom
@@ -70,11 +75,6 @@ export const GoalShow = () => {
           <BorderLinearProgress variant="determinate" value={50} />
         </CardContent>
       </Card>
-      <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
-        <ProgressRing value={75} size={250} thickness={4} />
-      </Box>
     </Box>
   );
 };

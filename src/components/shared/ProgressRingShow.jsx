@@ -3,7 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-export const ProgressRing = ({ value, size = 64, thickness = 6, ...rest }) => {
+export const ProgressRingShow = ({ value, size = 64, thickness = 6, ...rest }) => {
   return (
     <Box sx={{ position: "relative", display: "inline-flex" }}>
       {/* Background circle */}
@@ -30,6 +30,7 @@ export const ProgressRing = ({ value, size = 64, thickness = 6, ...rest }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          flexDirection: "column",
         }}
       >
         <Typography
@@ -39,12 +40,19 @@ export const ProgressRing = ({ value, size = 64, thickness = 6, ...rest }) => {
         >
           {`${Math.round(value)}%`}
         </Typography>
+                <Typography
+          variant="caption"
+          component="div"
+          sx={{ fontSize: size / 15, fontWeight: "500" }}
+        >
+          Daily Time Completion
+        </Typography>
       </Box>
     </Box>
   );
 };
 
-ProgressRing.propTypes = {
+ProgressRingShow.propTypes = {
   /**
    * The value of the progress indicator for the determinate variant.
    * Value between 0 and 100.
