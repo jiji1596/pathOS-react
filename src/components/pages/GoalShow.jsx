@@ -9,7 +9,7 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 10,
+  height: 20,
   borderRadius: 5,
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor: theme.palette.grey[200],
@@ -60,19 +60,40 @@ export const GoalShow = () => {
         Do Task
       </Button>
       <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          mb: 3,
+        }}
       >
         <ProgressRingShow value={75} size={240} thickness={3} />
       </Box>
       <Card variant="outlined" sx={{ mb: 2 }}>
         <CardContent>
           <Typography
+            variant="h5"
             gutterBottom
-            sx={{ color: "text.secondary", fontSize: 14 }}
+            sx={{ color: "text.primary", fontWeight: 500 }}
           >
-            Beginner Phase: 1/8
+            Beginner
           </Typography>
+
           <BorderLinearProgress variant="determinate" value={50} />
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography
+              gutterBottom
+              sx={{ color: "text.secondary", fontSize: 16 }}
+            >
+              Phase: 1/8
+            </Typography>
+            <Typography
+              gutterBottom
+              sx={{ color: "text.secondary", fontSize: 16 }}
+            >
+              50%
+            </Typography>
+          </Box>
         </CardContent>
       </Card>
     </Box>
