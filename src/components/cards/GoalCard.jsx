@@ -7,7 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 export const GoalCard = ({ goal }) => {
   return (
-    <Card sx={{ display: "flex", backgroundColor: "#CDFFC5", p: 2 }}>
+    <Card sx={{ display: "flex", p: 2 }}>
       <Box sx={{ display: "flex", flexGrow: "2", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }} value={25}>
           <Typography
@@ -58,7 +58,7 @@ function CircularProgressWithLabel(props) {
       <CircularProgress
         size={64}
         thickness={6}
-        sx={{}}
+        sx={{backgroundColor: "yellow"}}
         variant="determinate"
         {...props}
       />
@@ -77,7 +77,7 @@ function CircularProgressWithLabel(props) {
         <Typography
           variant="caption"
           component="div"
-          sx={{ color: "text.secondary", fontSize: "18px", fontWeight: "600" }}
+          sx={{ fontSize: "18px", fontWeight: "600" }}
         >
           {`${Math.round(props.value)}%`}
         </Typography>
