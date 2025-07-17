@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Stack from "@mui/material/Stack";
+import { Stack, Button } from "@mui/material";
 import { GoalCard } from "../cards/GoalCard";
+import AddIcon from '@mui/icons-material/Add';
 import useGoalStore from "../../store/useGoalStore";
 
 export const Goals = () => {
@@ -21,6 +22,17 @@ export const Goals = () => {
             </Link>
           );
         })}
+        <Button
+        variant="contained"
+        sx={{
+          p: 2,
+          mb: 2,
+          mx: "auto",
+          display: "block",
+        }}
+      >
+        <AddIcon sx={{fontSize: 40}} />
+      </Button>
     </Stack>
   );
 };
