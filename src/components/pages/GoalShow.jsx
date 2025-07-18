@@ -1,30 +1,12 @@
 import { useParams } from "react-router-dom";
 import useGoalStore from "../../store/useGoalStore";
 import { ProgressRingShow } from "../shared/ProgressRingShow";
+import { PhaseCard } from "../shared/PhaseCard";
 import { useEffect } from "react";
-import { Typography, Box, Card, CardContent, Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import LinearProgress, {
-  linearProgressClasses,
-} from "@mui/material/LinearProgress";
+import { Typography, Box, Button } from "@mui/material";
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 20,
-  borderRadius: 5,
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: theme.palette.grey[200],
-    ...theme.applyStyles("dark", {
-      backgroundColor: theme.palette.grey[800],
-    }),
-  },
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    backgroundColor: "#1a90ff",
-    ...theme.applyStyles("dark", {
-      backgroundColor: "#308fe8",
-    }),
-  },
-}));
+
+
 
 export const GoalShow = () => {
   const { id } = useParams();
@@ -69,33 +51,7 @@ export const GoalShow = () => {
       >
         <ProgressRingShow value={75} size={240} thickness={3} />
       </Box>
-      <Card variant="outlined" sx={{ mb: 2 }}>
-        <CardContent>
-          <Typography
-            variant="h5"
-            gutterBottom
-            sx={{ color: "text.primary", fontWeight: 500 }}
-          >
-            Beginner
-          </Typography>
-
-          <BorderLinearProgress variant="determinate" value={50} />
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Typography
-              gutterBottom
-              sx={{ color: "text.secondary", fontSize: 16 }}
-            >
-              Phase: 1/8
-            </Typography>
-            <Typography
-              gutterBottom
-              sx={{ color: "text.secondary", fontSize: 16 }}
-            >
-              50%
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
+      <PhaseCard goal={goal} />
     </Box>
   );
 };

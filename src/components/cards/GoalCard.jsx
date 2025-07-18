@@ -1,11 +1,10 @@
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
+import { Box, Card, CardContent, Typography } from "@mui/material";
+
 import { ProgressRing } from "../shared/ProgressRing";
 
-
 export const GoalCard = ({ goal }) => {
+
+
   return (
     <Card sx={{ display: "flex", p: 2 }}>
       <Box sx={{ display: "flex", flexGrow: "2", flexDirection: "column" }}>
@@ -45,6 +44,7 @@ export const GoalCard = ({ goal }) => {
         <Typography component="div" variant="body1">
           Daily time goal
         </Typography>
+
       </Box>
     </Card>
   );
